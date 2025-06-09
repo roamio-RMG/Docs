@@ -1,0 +1,44 @@
+# set up VS for docker
+
+--------Extension
+Docker <name: Docker>
+Remote - Containers <name: Dev Containers>
+
+mkdir ~/ros2_dev
+cd ~/ros2_dev
+
+mkdir .devcontainer
+cd .devcontainer
+
+nano devcontainer.json
+
+{
+  "name": "ROS2 Jazzy Dev",
+  "image": "mariame42/ros2_jazzy_env:arm64",
+  "runArgs": [
+    "--name", "ros2_container",
+    "-v", "/:/host"
+  ],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  }
+}
+
+~/ros2_dev
+└── .devcontainer
+    └── devcontainer.json
+
+
+🧩 Step 3: Open It in VS Code
+Open VS Code
+
+Go to File → Open Folder → Select ~/ros2_dev
+
+Press F1 (or Ctrl+Shift+P)
+
+Type: Remote-Containers: Reopen in Container
+-> i find thes :Dev Containers: Reopen in Container
+
+Select that option
+
+

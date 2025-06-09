@@ -1,0 +1,35 @@
+the script will include 
+
+#--------------- install git
+sudo apt update 
+sudo apt install git 
+#--------------- create ssh key
+-check if there is one
+ssh-keygen -t ed25519 -C "roamioaaqil@gmail.com"
+-echo the command to desplay -> cat ~/.ssh/id_ed25519.pub
+-echo that the user should cope and past to github
+
+#--------------- install VS
+apt update
+apt install wget gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sh -c 'echo "deb [arch=arm64] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+apt update
+apt install code
+
+#--------------- install docker
+sudo apt update && sudo apt install -y docker.io
+sudo usermod -aG docker $USER
+newgrp docker
+#--------------- ssh
+sudo apt update
+sudo apt install openssh-server -y
+sudo systemctl enable ssh
+sudo systemctl start ssh
+#--------------- ifconfig
+sudo apt install net-tools
+
+
+sudo apt install nodejs npm
+
